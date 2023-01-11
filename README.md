@@ -2,7 +2,7 @@
 
 ## Usage
 
-0. Clone this project. `git clone git@github.com:takumi-hash/chrome-extension-translate.git`
+0. Clone this project. (Hint: Open terminal and run `git clone git@github.com:takumi-hash/chrome-extension-translate.git`).
 1. Download [jquery-3.6.0.min.js](https://code.jquery.com/jquery-3.6.3.min.js) and place the file into  `chrome-extension-translate/src/libs/ `.
 2. Open Chrome, access `chrome://extensions` and enable `developer mode`.
 3. Click "Load unpackaged" and select the `chrome-extension-translate` directory of this project.
