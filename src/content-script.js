@@ -9,8 +9,9 @@ const config = {
 let caption;
 let nowString;
 let secret;
-chrome.storage.sync.get(["apiKey"], function (value) {
+chrome.storage.sync.get(["apiKey", "targetLang"], function (value) {
   secret = value.apiKey;
+  targetLang = value.targetLang;
 });
 
 const observer = new MutationObserver(function () {
@@ -25,7 +26,7 @@ const observer = new MutationObserver(function () {
     $.post("https://api-free.deepl.com/v2/translate", {
       auth_key: secret,
       text: nowString,
-      target_lang: "JA",
+      target_lang: targetLang,
     })
       .done(function (data) {
         console.log(data.translations[0].text);

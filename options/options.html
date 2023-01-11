@@ -1,14 +1,80 @@
 <!DOCTYPE html>
 <html>
-<body>
-  <h1>Options</h1>
-    <form>
-  <div>
-      <textarea id="apiKey" name="apiKey" cols="30" rows="10"></textarea>
-  </div>
-      <button id="apiKeyBtn" class="color" style="font-weight: bold;">Set</button>
+  <head>
+    <link rel="stylesheet" href="https://fonts.xz.style/serve/inter.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@exampledev/new.css/new.min.css"
+    />
+  </head>
+  <body>
+    <h1>Options</h1>
+    <form name="apiOptions">
+      <h2>DeepL API Key</h2>
+      <div>
+        <textarea id="apiKey" name="apiKey" cols="30" rows="10"></textarea>
+      </div>
+      <button id="apiKeyBtn" class="btn btn-primary" style="font-weight: bold">
+        Set
+      </button>
+      <div id="msg-api"></div>
     </form>
-  <div id="msg"></div>
-  <script src="options.js"></script>
-</body>
+    <form name="langOptions">
+      <h2>Target Language</h2>
+      <p>Current Target Language:<span id="selected-lang"></span></p>
+      <div>
+        <select name="lang" id="lang-select">
+          <option id="JA" value="JA">Japanese</option>
+          <option id="BG" value="BG">Bulgarian</option>
+          <option id="CS" value="CS">Czech</option>
+          <option id="DA" value="DA">Danish</option>
+          <option id="DE" value="DE">German</option>
+          <option id="EL" value="EL">Greek</option>
+          <option id="EN-GB" value="EN-GB">English (British)</option>
+          <option id="EN-US" value="EN-US">English (American)</option>
+          <option id="ES" value="ES">Spanish</option>
+          <option id="ET" value="ET">Estonian</option>
+          <option id="FI" value="FI">Finnish</option>
+          <option id="FR" value="FR">French</option>
+          <option id="HU" value="HU">Hungarian</option>
+          <option id="ID" value="ID">Indonesian</option>
+          <option id="IT" value="IT">Italian</option>
+          <option id="LT" value="LT">Lithuanian</option>
+          <option id="LV" value="LV">Latvian</option>
+          <option id="NL" value="NL">Dutch</option>
+          <option id="PL" value="PL">Polish</option>
+          <option id="PT-BR" value="PT-BR">Portuguese (Brazilian)</option>
+          <option id="PT-PT" value="PT-PT">
+            Portuguese (Other than Brazilian Portuguese)
+          </option>
+          <option id="RO" value="RO">Romanian</option>
+          <option id="RU" value="RU">Russian</option>
+          <option id="SK" value="SK">Slovak</option>
+          <option id="SL" value="SL">Slovenian</option>
+          <option id="SV" value="SV">Swedish</option>
+          <option id="TR" value="TR">Turkish</option>
+          <option id="UK" value="UK">Ukrainian</option>
+          <option id="ZH" value="ZH">Chinese (simplified)</option>
+        </select>
+      </div>
+      <button id="langBtn" class="btn btn-primary" style="font-weight: bold">
+        Set
+      </button>
+      <div id="msg-lang"></div>
+    </form>
+    <div>
+      <h2>License</h2>
+      <p>This extension is developed with libraries shown below.</p>
+      <ul>
+        <li><a href="https://newcss.net/">new.css</a> (MIT license)</li>
+        <li>
+          <a href="https://fonts.google.com/specimen/Inter/"
+            >Google Font - Inter</a
+          >
+          (Open Font License)
+        </li>
+      </ul>
+    </div>
+    <script src="options.js"></script>
+  </body>
 </html>
