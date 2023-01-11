@@ -1,0 +1,11 @@
+#custom-deepl {
+  width: 70%;
+  height: 30%;
+  position: fixed;
+  top: 80%;
+  left: 20%;
+  background: rgba(99, 99, 99, 0.5);
+  color: #fff;
+  font-weight: bold;
+  font-size: 24px;
+}

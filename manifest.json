@@ -1,0 +1,16 @@
+{
+  "name": "Deepldemy",
+  "description": "Auto Translate Udemy with Deepl",
+  "version": "1.0",
+  "manifest_version": 3,
+  "permissions": ["activeTab", "scripting", "storage"],
+  "options_page": "options/options.html",
+  "action": {},
+  "content_scripts": [
+    {
+      "matches": ["https://*.udemy.com/*"],
+      "js": ["src/libs/jquery-3.6.0.min.js", "src/content-script.js"],
+      "css": ["src/custom-style.css"]
+    }
+  ]
+}
