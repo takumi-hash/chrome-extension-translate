@@ -1,6 +1,6 @@
 {
   "name": "Deepldemy",
-  "description": "Auto Translate Udemy with Deepl",
+  "description": "Auto Translate Udemy captions with Deepl API.",
   "version": "1.0",
   "manifest_version": 3,
   "permissions": ["activeTab", "scripting", "storage"],
