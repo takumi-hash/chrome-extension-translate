@@ -14,7 +14,7 @@ document.body.onload = function () {
 
     if (typeof secret === "undefined") {
       document.getElementById("apiKeyMsg").innerText =
-        "Your DeepL API Key is not set. Plase set up on the options page.";
+        "Your DeepL API Key is not set. Plase set up on the Option page.";
     } else {
       document.getElementById("apiKeyMsg").innerText =
         "API Key is set :) Start playing video on Udemy with captions. Translation will start automatically.";
