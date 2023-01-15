@@ -20,25 +20,29 @@ const observer = new MutationObserver(function () {
       ? $("div[class^='well--container--']").text()
       : $("div[class^='captions-display--captions-container']").text();
   if (caption !== "" && nowString !== caption) {
-    console.log("Chrome Extension Traslation started.");
-    nowString = caption;
-    observer.disconnect();
-    $.post("https://api-free.deepl.com/v2/translate", {
-      auth_key: secret,
-      text: nowString,
-      target_lang: targetLang,
-    })
-      .done(function (data) {
-        console.log(data.translations[0].text);
-        if ($("div[id^='custom-deepl']").length < 1) {
-          let customArea = '<div id="custom-deepl"></div>';
-          $("body").append(customArea);
-        }
-        $("div[id^='custom-deepl']").text(data.translations[0].text);
+    if (typeof secret === "undefined") {
+      console.log("Deepldemy: you need to set your DeepL api key first.");
+    } else {
+      console.log("Chrome Extension Traslation started.");
+      nowString = caption;
+      observer.disconnect();
+      $.post("https://api-free.deepl.com/v2/translate", {
+        auth_key: secret,
+        text: nowString,
+        target_lang: targetLang,
       })
-      .always(function () {
-        observer.observe(elm, config);
-      });
+        .done(function (data) {
+          console.log(data.translations[0].text);
+          if ($("div[id^='custom-deepl']").length < 1) {
+            let customArea = '<div id="custom-deepl"></div>';
+            $("body").append(customArea);
+          }
+          $("div[id^='custom-deepl']").text(data.translations[0].text);
+        })
+        .always(function () {
+          observer.observe(elm, config);
+        });
+    }
   }
 });
 
